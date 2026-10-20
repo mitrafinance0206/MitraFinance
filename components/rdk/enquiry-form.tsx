@@ -86,8 +86,8 @@ const ERROR_MESSAGES: Record<string, Bilingual> = {
     "PAN வடிவம் ABCDE1234F ஆக இருக்க வேண்டும்.",
   ],
   aadhaar: [
-    "Enter a valid 12-digit Aadhaar number.",
-    "சரியான 12 இலக்க ஆதார் எண்ணை உள்ளிடவும்.",
+    "Enter a valid 12-digit Aadhaar number (no spaces).",
+    "சரியான 12 இலக்க ஆதார் எண்ணை உள்ளிடவும் (இடைவெளி இல்லாமல்).",
   ],
   dob: [
     "Enter a valid date of birth in the past.",
@@ -251,7 +251,7 @@ Please contact me to discuss the next steps.`;
                   : "off"
         }
         maxLength={
-          key === "pan" || key === "mobile" ? 10 : key === "aadhaar" ? 14 : 1500
+          key === "pan" || key === "mobile" ? 10 : key === "aadhaar" ? 12 : 1500
         }
         max={key === "dob" ? new Date().toISOString().slice(0, 10) : undefined}
         min={
@@ -509,7 +509,7 @@ Please contact me to discuss the next steps.`;
                           {input("mobile", "tel", "9876543210")}
                           {input("email", "email", "name@example.com")}
                           {input("pan", "text", "ABCDE1234F")}
-                          {input("aadhaar", "text", "XXXX XXXX XXXX")}
+                          {input("aadhaar", "text", "XXXXXXXXXXXX")}
                         </div>
                         <div className="rdk-field">
                           <label htmlFor="address">{t(LABELS.address)} *</label>
