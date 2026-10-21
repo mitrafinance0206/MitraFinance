@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mitra Finance | Personal Loans, Home Loans in Coimbatore, Avinashi, Tirupur",
+    default: "Mitra Finance",
     template: "%s | Mitra Finance",
   },
   description:

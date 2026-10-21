@@ -2,7 +2,7 @@ import { EnquiryForm } from "@/components/rdk/enquiry-form";
 export const metadata = {
   title: "Loan enquiry",
   description:
-    "Enquire about personal loans, home loans, loans against property and OD / CC with RDK Financial Services, Avinashi.",
+    "Enquire about personal loans, home loans, loans against property and OD / CC with Mitra Finance, Coimbatore.",
 };
 export default async function ApplyPage({
   searchParams,
