@@ -206,12 +206,21 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--rdk-navy);
+  color: white;
+  background: var(--rdk-navy);
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid var(--rdk-navy);
 }
 .rdk-text-link:hover {
-  color: var(--rdk-orange);
+  background: var(--rdk-orange);
+  border-color: var(--rdk-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 140, 0, 0.3);
 }
 .rdk-menu {
   display: none;
