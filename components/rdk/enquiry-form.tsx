@@ -35,8 +35,8 @@ const LABELS: Record<keyof EnquiryInput, Bilingual> = {
   gender: ["Gender", "பாலினம்"],
   mobile: ["Mobile number", "கைபேசி எண்"],
   email: ["Email address", "மின்னஞ்சல்"],
-  pan: ["PAN number", "PAN எண்"],
-  aadhaar: ["Aadhaar number", "ஆதார் எண்"],
+  pan: ["PAN number (optional)", "PAN எண் (விருப்பம்)"],
+  aadhaar: ["Aadhaar number (optional)", "ஆதார் எண் (விருப்பம்)"],
   address: ["Residential address", "வீட்டு முகவரி"],
   employmentType: ["Employment type", "வேலை வகை"],
   organisation: ["Company / business name", "நிறுவனம் / தொழில் பெயர்"],
@@ -228,7 +228,7 @@ Please contact me to discuss the next steps.`;
     <div className="rdk-field" key={key}>
       <label htmlFor={key}>
         {t(LABELS[key])}
-        {key !== "remarks" && <span aria-hidden="true"> *</span>}
+        {!["remarks", "pan", "aadhaar"].includes(key) && <span aria-hidden="true"> *</span>}
       </label>
       <input
         id={key}
@@ -236,7 +236,7 @@ Please contact me to discuss the next steps.`;
         type={type}
         value={form[key]}
         placeholder={placeholder}
-        required={key !== "remarks"}
+        required={!["remarks", "pan", "aadhaar"].includes(key)}
         aria-invalid={!!errors[key]}
         aria-describedby={errors[key] ? `${key}-error` : undefined}
         autoComplete={

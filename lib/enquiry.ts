@@ -58,8 +58,6 @@ export function validateEnquiry(input: unknown): {
     "gender",
     "mobile",
     "email",
-    "pan",
-    "aadhaar",
     "address",
     "employmentType",
     "organisation",
@@ -78,8 +76,8 @@ export function validateEnquiry(input: unknown): {
   if (!/^[6-9]\d{9}$/.test(data.mobile)) errors.mobile = "mobile";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) || data.email.length > 254)
     errors.email = "email";
-  if (!/^[A-Z]{5}\d{4}[A-Z]$/.test(data.pan)) errors.pan = "pan";
-  if (!/^[2-9]\d{11}$/.test(data.aadhaar)) errors.aadhaar = "aadhaar";
+  if (data.pan && !/^[A-Z]{5}\d{4}[A-Z]$/.test(data.pan)) errors.pan = "pan";
+  if (data.aadhaar && !/^[2-9]\d{11}$/.test(data.aadhaar)) errors.aadhaar = "aadhaar";
   const birth = new Date(data.dob + "T00:00:00Z");
   if (
     !/^\d{4}-\d{2}-\d{2}$/.test(data.dob) ||
